@@ -4,10 +4,16 @@ class Piece
   # true == white
   def initialize(color)
     @color = color
+    @moved = false
   end
 
   def to_s
     @color ? self.class::SYMBOL[0] : self.class::SYMBOL[1]
+  end
+
+  def move!(row, col, move)
+    @moved ||= move
+    @row, @col = row, col
   end
 
   def rel(row, col)

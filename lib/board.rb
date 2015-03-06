@@ -22,11 +22,15 @@ class Board
     end
   end
 
-  def set!(row, col, piece)
-    piece.row = row
-    piece.col = col
+  def set!(row, col, piece, move = false)
     piece.board = self
+    piece.move!(row, col, move)
     @board[[row, col]] = piece
+  end
+
+  def move!(row, col, d_row, d_col)
+    piece = @board.delete([row, col])
+    set!(row + d_row, col + d_col, piece, true)
   end
 
   def get(row, col)

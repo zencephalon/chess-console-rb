@@ -1,11 +1,6 @@
 class Pawn < Piece
   SYMBOL = ['♙', '♟']
 
-  def initialize(color)
-    @moved = false
-    super
-  end
-
   def moves
     dir = (@color ? 1 : -1)
     single, double = [dir, 0], [dir * 2, 0]
