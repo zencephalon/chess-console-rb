@@ -1,6 +1,8 @@
 class Piece
-  def initialize(row, col, color)
-    @row, @col, @color = row, col, color
+  attr_accessor :row, :col
+
+  def initialize(color)
+    @color = color
   end
 
   def to_s
