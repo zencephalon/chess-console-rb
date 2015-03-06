@@ -1,12 +1,13 @@
 class Piece
   attr_accessor :row, :col, :board
 
+  # true == white
   def initialize(color)
     @color = color
   end
 
   def to_s
-    @color == :white ? self.class::SYMBOL[0] : self.class::SYMBOL[1]
+    @color ? self.class::SYMBOL[0] : self.class::SYMBOL[1]
   end
 
   def rel(row, col)
