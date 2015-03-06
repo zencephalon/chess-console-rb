@@ -25,7 +25,7 @@ class Board
   def set!(row, col, piece)
     piece.row = row
     piece.col = col
-    piece.board = @board
+    piece.board = self
     @board[[row, col]] = piece
   end
 
