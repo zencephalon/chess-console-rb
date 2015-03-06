@@ -28,7 +28,7 @@ class Board
     @board[[row, col]] = piece
   end
 
-  def move!((row, col), d_row, d_col)
+  def move!((row, col), (d_row, d_col))
     piece = @board.delete([row, col])
     set!([row + d_row, col + d_col], piece, true)
   end

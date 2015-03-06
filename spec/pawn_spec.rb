@@ -14,6 +14,7 @@ Pp
   end
 
   it "can't double move after first move" do
-
+    board.move!([0, 0], [1, 0])
+    expect(board.get([1, 0]).moves).to eq([[1,0]])
   end
 end
