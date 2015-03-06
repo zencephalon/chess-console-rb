@@ -7,6 +7,6 @@ describe Board do
 Pp
     chess
 
-    expect(board.get(0, 0)).to be_a(Pawn)
+    expect(board.get([0, 0])).to be_a(Pawn)
   end
 end
