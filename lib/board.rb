@@ -16,24 +16,24 @@ class Board
 
         case square
         when /p/i
-          set!(lines.size - row - 1, col, Pawn.new(white))
+          set!([lines.size - row - 1, col], Pawn.new(white))
         end
       end
     end
   end
 
-  def set!(row, col, piece, move = false)
+  def set!((row, col), piece, move = false)
     piece.board = self
-    piece.move!(row, col, move)
+    piece.move!([row, col], move)
     @board[[row, col]] = piece
   end
 
-  def move!(row, col, d_row, d_col)
+  def move!((row, col), d_row, d_col)
     piece = @board.delete([row, col])
-    set!(row + d_row, col + d_col, piece, true)
+    set!([row + d_row, col + d_col], piece, true)
   end
 
-  def get(row, col)
+  def get((row, col))
     @board[[row, col]]
   end
 

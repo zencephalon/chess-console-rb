@@ -11,12 +11,12 @@ class Piece
     @color ? self.class::SYMBOL[0] : self.class::SYMBOL[1]
   end
 
-  def move!(row, col, move)
+  def move!((row, col), move = true)
     @moved ||= move
     @row, @col = row, col
   end
 
-  def rel(row, col)
+  def rel((row, col))
     [@row + row, @col + col]
   end
 
