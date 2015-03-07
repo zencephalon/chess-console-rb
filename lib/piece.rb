@@ -1,5 +1,5 @@
 class Piece
-  attr_accessor :row, :col, :board
+  attr_accessor :row, :col, :board, :color
 
   # true == white
   def initialize(color)
