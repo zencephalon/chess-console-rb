@@ -9,14 +9,15 @@ class Board
 
   def parse!(board_str)
     lines = board_str.split("\n")
-
+    @height = lines.size
+    @width = lines.first.size
     lines.each_with_index do |line, row|
       line.split('').each_with_index do |square, col|
         white = (square.upcase == square)
 
         case square
         when /p/i
-          set!([lines.size - row - 1, col], Pawn.new(white))
+          set!([@height - row - 1, col], Pawn.new(white))
         end
       end
     end
