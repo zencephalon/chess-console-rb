@@ -36,6 +36,10 @@ class Board
     @board[[row, col]]
   end
 
+  def in_bounds?((row, col))
+    0 <= row && row < @height && 0 <= col && 0 < @width
+  end
+
   def to_s
     (@height - 1).downto(0).map do |row|
       (0...@width).map do |col|
