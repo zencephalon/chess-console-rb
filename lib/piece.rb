@@ -7,6 +7,14 @@ class Piece
     @moved = false
   end
 
+  def in_bounds?(move)
+
+  end
+
+  def bounds_check(moves)
+    moves.filter {|move| @board.in_bounds?(rel(move))}
+  end
+
   def to_s
     @color ? self.class::SYMBOL[0] : self.class::SYMBOL[1]
   end
