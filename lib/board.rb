@@ -14,9 +14,8 @@ class Board
       line.split('').each_with_index do |square, col|
         white = (square.upcase == square)
 
-        case square
-        when /p/i
-          set!([@height - row - 1, col], Pawn.new(white))
+        @parser.each do |pattern, piece_klass|
+          set!([@height - row - 1, col], piece_klass.new(white)) if square.match(pattern)
         end
       end
     end
