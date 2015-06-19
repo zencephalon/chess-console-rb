@@ -43,6 +43,11 @@ class Board
   end
 
   def to_s
-
+    (@height - 1).downto(0).map do |row|
+      (0...@width).map do |col|
+        piece = get([row, col])
+        piece ? piece.to_s : " "
+      end.join
+    end.join("\n")
   end
 end
