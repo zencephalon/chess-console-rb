@@ -40,6 +40,10 @@ class Board
     0 <= row && row < @height && 0 <= col && 0 < @width
   end
 
+  def moves(piece)
+    piece.moves.select {|move| @board.in_bounds?(rel(move))}
+  end
+
   def to_s
     (@height - 1).downto(0).map do |row|
       (0...@width).map do |col|
