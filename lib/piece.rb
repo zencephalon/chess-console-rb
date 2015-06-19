@@ -12,7 +12,7 @@ class Piece
   end
 
   def bounds_check(moves)
-    moves.filter {|move| @board.in_bounds?(rel(move))}
+    moves.select {|move| @board.in_bounds?(rel(move))}
   end
 
   def to_s
