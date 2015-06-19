@@ -1,5 +1,3 @@
-require 'board'
-
 describe Pawn do
   let(:board) { 
     Chess.board(<<-chess)

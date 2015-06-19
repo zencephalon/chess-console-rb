@@ -1,5 +1,3 @@
-require 'board'
-
 describe Rook do
   let(:board) { 
     Chess.board(<<-chess)

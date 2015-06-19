@@ -1,5 +1,3 @@
-require 'piece'
-
 describe Piece do
   let(:piece) {
     piece = Piece.new(true)
