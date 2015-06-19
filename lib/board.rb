@@ -1,8 +1,7 @@
-require_relative 'piece'
-require_relative 'pawn'
-
 class Board
-  def initialize(board_str = nil)
+  def initialize(args)
+    board_str = args.fetch(:board_str)
+    @parser = args.fetch(:parser)
     @board = {}
     board_str ? parse!(board_str) : setup_standard_chess!
   end

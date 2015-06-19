@@ -1,8 +1,9 @@
 require 'board'
+require 'chess'
 
 describe Board do
   it "should parse a string" do
-    board = Board.new(<<-chess)
+    board = Chess.board(<<-chess)
 ..
 Pp
     chess
@@ -11,7 +12,7 @@ Pp
   end
 
   it "should have a working to_s" do
-    board = Board.new(<<-chess)
+    board = Chess.board(<<-chess)
 ..
 Pp
     chess

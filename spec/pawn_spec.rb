@@ -2,7 +2,7 @@ require 'board'
 
 describe Pawn do
   let(:board) { 
-    Board.new(<<-chess)
+    Chess.board(<<-chess)
 ..
 ..
 Pp
@@ -19,7 +19,7 @@ Pp
   end
 
   let(:attack_board) {
-    Board.new(<<-chess)
+    Chess.board(<<-chess)
 p.p
 .P.
     chess
