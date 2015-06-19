@@ -1,7 +1,6 @@
-require 'board'
 require 'chess'
 
-describe Board do
+describe Chess do
   it "should parse a string" do
     board = Chess.board(<<-chess)
 ..
