@@ -17,7 +17,22 @@ module Chess
     /k/i => King
   }
 
+  STANDARD_BOARD = <<-chess
+rnbqkbnr
+pppppppp
+........
+........
+........
+........
+PPPPPPPP
+RNBQKBNR
+  chess
+
   def self.board(board_str)
     Board.new(board_str: board_str, parser: PIECE_PARSER)
+  end
+
+  def self.standard_board
+    board(STANDARD_BOARD)
   end
 end

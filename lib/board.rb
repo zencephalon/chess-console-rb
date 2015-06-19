@@ -36,10 +36,6 @@ class Board
     @board[[row, col]]
   end
 
-  def setup_standard_chess!
-
-  end
-
   def to_s
     (@height - 1).downto(0).map do |row|
       (0...@width).map do |col|
